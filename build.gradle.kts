@@ -1,8 +1,3 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import org.gradle.api.tasks.Copy
-import org.ajoberstar.grgit.Grgit
-
-
 plugins {
     id("java")
     id("com.github.johnrengelman.shadow") version "7.1.2"
@@ -23,11 +18,10 @@ repositories {
 }
 
 dependencies {
-    implementation("org.projectlombok:lombok:1.18.32")
+    compileOnly("org.projectlombok:lombok:1.18.32")
     annotationProcessor("org.projectlombok:lombok:1.18.32")
-    implementation("com.github.skipdevelopment:command-framework:1.0.0")
-
-    compileOnly("com.github.skipdevelopment:pluto-spigot:1.0")
+    compileOnly("com.github.skipdevelopment:pluto-spigot:1.0");
+    implementation("com.github.skipdevelopment:command-framework:9c71e6dab4")
 }
 
 tasks {
